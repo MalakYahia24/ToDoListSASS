@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ToDoList</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<div class="card">
+<h1>TODOLIST</h1>
+ 
+<div class="input-row">
+<input type="text" placeholder="what needs to be done?">
+<button class="add-btn">+</button>
+</div>
+ 
+  <ul>
+        <li>
+        <input type="checkbox">
+        <span class="task-text">read the book (at least 5 pages)</span>
+        <button class="icon edit">✎</button>
+        <button class="icon delete">✕</button>
+        </li>
+        <li class="done">
+        <input type="checkbox" checked>
+        <span class="task-text"><del>buy dog food</del></span>
+        <button class="icon edit">✎</button>
+        <button class="icon delete">✕</button>
+        </li>
+        <li>
+        <input type="checkbox">
+        <span class="task-text">call my parents</span>
+        <button class="icon edit">✎</button>
+        <button class="icon delete">✕</button>
+        </li>
+        <li class="done">
+        <input type="checkbox" checked>
+        <span class="task-text"><del>clean my working place</del></span>
+        <button class="icon edit">✎</button>
+        <button class="icon delete">✕</button>
+        </li>
+        <li class="done">
+        <input type="checkbox" checked>
+        <span class="task-text"><del>kill Bill</del></span>
+        <button class="icon edit">✎</button>
+        <button class="icon delete">✕</button>
+        </li>
+  </ul>
+ 
+  <div class="listProgress">
+    <div class="progress">
+    <progress class="progress-fill" value="3" max=""></progress>
+    <div class="progress-label">
+      <span class="count">3</span>
+      <span class="rest"> of <span class="count">5</span> tasks done</span>
+    </div>
+    </div>
+    <button class="remove-btn">Remove checked ✕</button>
+  </div>
+</div>
+ 
+</body>
+</html>

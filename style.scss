@@ -1,0 +1,181 @@
+    $bg: #0b7eb3;
+    $card-bg: #ffffff;
+    $border: #c7e2ec;
+    $text: #689eb8;
+    $row-bg: #f3fafd;
+    $iconC: rgb(5, 5, 173);
+
+    @mixin btn-primary {
+        background: $bg;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: $bg-hover;
+        }
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $bg;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+        .card {
+            width: 480px;
+            background: $card-bg;
+            border: 1px solid $border;
+            border-radius: 6px;
+            padding: 30px 30px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        
+            h1 {
+                text-align: center;
+                color: #2c3e50;
+                font-size: 28px;
+                margin: 0 0 25px;
+                text-shadow: 1px 1px 1px $bg;
+            }
+ 
+            .input-row {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+
+                input[type="text"] {
+                    flex: 1;
+                    padding: 12px 14px;
+                    border: 1px solid $border;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    color: $text;
+                    outline: none;
+
+                    &::placeholder {
+                        color: rgb(126, 124, 124);
+                        font-style: italic;
+                        font-weight:800;
+                    }
+                    &:focus {
+                        border-color: $bg;
+                    }
+                }
+
+                .add-btn {
+                    width: 44px;
+                    font-size: 20px;
+                    @include btn-primary;
+                }
+
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 0 20px;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 8px;
+                    border-radius: 4px;
+                    background: $row-bg;
+
+                    input[type="checkbox"]{
+                        accent-color: $bg;
+                        width: 16px;
+                        height: 16px;
+                        cursor: pointer;
+                        flex-shrink: 0;
+                    }
+
+                    &.done{
+                        background: $card-bg;
+                    }
+                    
+                   .task-text {
+                        flex: 1;
+                        color: $text;
+                        font-size: 14px;
+                    }
+ 
+ 
+                    .icon {
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: $text;
+                        font-size: 14px;
+                        padding: 2px;
+                        transition: color 0.2s ease;
+
+                        &:hover {
+                            color: $iconC;
+                        }
+
+                        &.delete:hover {
+                            color: $bg;
+                        }
+                    }
+                }
+            }
+
+            .listProgress{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+
+                .progress {
+                    flex: 1;
+                    height: 38px;
+                    border-radius: 4px;
+                    border: 1px solid $border;
+                    background-color: $row-bg;
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            
+                progress{
+                    -webkit-appearance: none;
+                    position: absolute;
+                    left: 0; top: 0; bottom: 0;
+                    height: 100%;
+                }
+
+                .progress-label {
+                    position: relative;
+                    padding-left: 14px;
+                    font-size: 13px;
+                    z-index: 1;
+
+                    .count {
+                        color: rgb(34, 32, 32);
+                        font-weight: bold;
+                    }
+
+                    .rest {
+                        color: #373b3d;
+                    }
+                }
+                
+                .remove-btn {
+                    height: 38px;
+                    padding: 0 16px;
+                    font-size: 13px;
+                    white-space: nowrap;
+                    @include btn-primary;
+                }               
+            }           
+        }
+    }
